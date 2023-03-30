@@ -1,3 +1,5 @@
+const dotenv =require('dotenv');
+dotenv.config({path:'./config.env'});
 const express = require("express");
 const fs = require("fs");
 const bodyparser = require("body-parser");
@@ -235,7 +237,8 @@ app.post("/delivery", function (req, res) {
   console.log(localStorage.getItem('auth'),'local storage')
 });
 
+const port = process.env.PORT || 3030
 
-app.listen(3030, () => {
+app.listen(port, () => {
   console.log("server listening on 3030");
 });
